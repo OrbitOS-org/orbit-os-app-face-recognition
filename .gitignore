@@ -1,0 +1,18 @@
+# TLS certificates and keys — never commit
+**/certs/grpc/*.crt
+**/certs/grpc/*.key
+# enrolled faces: personal data, never commit
+face_db/
+**/face_db/
+# build output
+packages/
+*.orb
+/face_recognition_client
+# local SDK copy downloaded by Orbit Studio
+orbit-os-sdk-go/
+go.work.sum
+# local Orbit Studio settings
+orbit.project.local.json
+.DS_Store
+# binary built inside the app folder
+cmd/face_recognition_client/face_recognition_client

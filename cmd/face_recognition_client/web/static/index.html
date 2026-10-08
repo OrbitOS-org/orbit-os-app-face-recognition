@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edge AI – Face Recognition</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=__BUILD__" />
+  <link rel="stylesheet" href="style.css?v=__BUILD__" />
+</head>
+<body>
+  <div class="shell">
+
+    <header class="header">
+      <div class="brand">
+        <a href="https://www.orbit-os.org/" target="_blank" rel="noopener" title="Orbit OS website"><img src="orbit-logo.svg?v=__BUILD__" alt="Orbit OS" width="143" height="48" /></a>
+        <h1>Edge AI – Face Recognition</h1>
+      </div>
+      <nav class="tabs" aria-label="Sections">
+        <button type="button" id="tabLive" class="tab active" aria-pressed="true">Live</button>
+        <button type="button" id="tabEnroll" class="tab" aria-pressed="false">Enroll <span id="peopleCount" class="count">0</span></button>
+      </nav>
+      <div id="state" class="state" role="status" aria-live="polite">
+        <span class="dot"></span><span id="stateText">Starting…</span>
+      </div>
+    </header>
+
+    <main class="main">
+
+      <!-- The camera, shown in both sections; the boxes are drawn over it by the page. -->
+      <section class="stage" aria-label="Camera">
+        <div id="screen" class="screen">
+          <img id="video" alt="Live camera" />
+          <canvas id="overlay"></canvas>
+          <div id="placeholder" class="placeholder">Connecting to the camera…</div>
+          <div id="recording" class="recording hidden"><span class="rec-dot"></span><span id="recordingText">Recording</span></div>
+        </div>
+        <div class="toolbar">
+          <label title="The camera to use">Camera
+            <select id="camera"></select>
+          </label>
+          <button type="button" id="btnPause" title="Stop the camera while you do not need it">Pause</button>
+          <span class="spacer"></span>
+          <span id="stats" class="stats" title="Frames analysed each second · time to analyse one frame"></span>
+        </div>
+      </section>
+
+      <!-- Live: who is in front of the camera right now. -->
+      <aside id="panelLive" class="panel" aria-label="Live detection">
+        <div class="panel-head">
+          <h2>In view</h2>
+          <label class="switch" title="Off: faces are only found. On: each face is compared with the enrolled people.">
+            <input type="checkbox" id="identify" checked />
+            <span class="track"></span>
+            <span>Identify people</span>
+          </label>
+        </div>
+        <ul id="faces" class="faces"></ul>
+        <p id="facesEmpty" class="empty">No face in view.</p>
+        <p id="liveHint" class="hint"></p>
+
+        <div class="setting">
+          <div class="setting-head">
+            <label for="threshold" class="label">Match threshold</label>
+            <output id="thresholdValue" for="threshold"></output>
+          </div>
+          <input type="range" id="threshold" min="25" max="80" step="1" value="40" disabled />
+          <p id="thresholdHint" class="hint"></p>
+        </div>
+      </aside>
+
+      <!-- Enroll: teach the app a face, and manage the people it knows. -->
+      <aside id="panelEnroll" class="panel hidden" aria-label="Enroll">
+        <div class="panel-head"><h2>Enroll a person</h2></div>
+        <form id="enrollForm" class="enroll" autocomplete="off">
+          <label for="enrollName" class="label">Name</label>
+          <input type="text" id="enrollName" maxlength="60" placeholder="e.g. John Smith" list="knownNames" />
+          <datalist id="knownNames"></datalist>
+          <div class="progress" aria-hidden="true"><div id="enrollBar" class="bar"></div></div>
+          <p id="enrollStatus" class="enroll-status">Type a name, then record the face for a few seconds.</p>
+          <div class="row">
+            <button type="submit" id="btnRecord" class="primary">Start recording</button>
+            <button type="button" id="btnCancel" class="hidden">Cancel</button>
+          </div>
+          <ul class="tips">
+            <li>One person in front of the camera, face well lit.</li>
+            <li>Look at the camera and turn the head slightly while recording.</li>
+            <li id="tipRecordings">Record the same name again in other light (daylight, lamp light): each recording is kept as a profile.</li>
+          </ul>
+        </form>
+
+        <div class="panel-head people-head"><h2>Enrolled people</h2></div>
+        <ul id="people" class="people"></ul>
+        <p id="peopleEmpty" class="empty">Nobody is enrolled yet.</p>
+      </aside>
+
+    </main>
+
+    <footer class="footer">
+      Edge AI – Face Recognition v__VERSION__ · Licensed under Apache-2.0 <span class="dot">·</span> <span class="rights">© 2026 Orbit OS</span>
+    </footer>
+
+  </div>
+  <div id="toast" class="toast hidden" role="status"></div>
+  <script src="app.js?v=__BUILD__"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+Orbit OS Edge AI - Face Recognition
+Copyright 2026 Orbit OS
+
+This product includes software developed by Orbit OS
+for the Orbit OS platform (https://www.orbit-os.org/).
+
+Third-party components
+----------------------
+
+BlazeFace face detection model (full range)
+  cmd/face_recognition_client/orb/data/blaze_face_full_range.tflite
+  From MediaPipe, Copyright The MediaPipe Authors (Google LLC)
+  https://github.com/google-ai-edge/mediapipe
+  License: Apache-2.0
+
+SFace face recognition model
+  cmd/face_recognition_client/orb/data/face_recognition_sface_2021dec_int8.onnx
+  From the OpenCV Zoo (the quantised version), unmodified
+  https://github.com/opencv/opencv_zoo/tree/main/models/face_recognition_sface
+  "SFace: Sigmoid-Constrained Hypersphere Loss for Robust Face Recognition",
+  contributed by Yaoyao Zhong (https://github.com/zhongyy/SFace); ONNX
+  conversion by Chengrui Wang.
+  License: Apache-2.0
+
+Orbit OS Go SDK - https://github.com/OrbitOS-org/orbit-os-sdk-go
+  License: Apache-2.0
+
+Go modules golang.org/x/image, golang.org/x/net, golang.org/x/sys,
+golang.org/x/text, google.golang.org/protobuf
+  License: BSD-3-Clause
+
+google.golang.org/grpc, google.golang.org/genproto
+  License: Apache-2.0

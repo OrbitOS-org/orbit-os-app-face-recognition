@@ -1,0 +1,7 @@
+{
+  "language": "go",
+  "name": "orbit-os-app-face-recognition",
+  "appPath": "cmd/face_recognition_client",
+  "certsDir": "cmd/certs/grpc",
+  "sdkVersion": "v26.0.3"
+}

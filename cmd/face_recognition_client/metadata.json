@@ -1,0 +1,15 @@
+{
+  "package_id": "org.orbit-os.service.face-recognition",
+  "slug": "face-recognition-client",
+  "name": "Edge AI - Face Recognition",
+  "version": "1.2.0",
+  "description": "Edge AI face recognition for Orbit OS devices",
+  "entry_point": "face_recognition_client",
+  "data": "./model",
+  "permissions": [
+    "SystemService/*",
+    "CameraService/*",
+    "AiService/*",
+    "AppHubService/*"
+  ]
+}

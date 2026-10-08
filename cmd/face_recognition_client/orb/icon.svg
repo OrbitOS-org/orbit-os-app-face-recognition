@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Edge AI - Face Recognition">
+  <!-- App icon: a face as the app shows it when it knows who it is.
+       Left half: the face as it is. Right half: bars, the face as the model reads it.
+       Around it, the green frame the page draws on a recognised face, with the name label
+       above it (a tick, the name, the score). On the Orbit OS purple. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a08bff"/><stop offset="0.5" stop-color="#6f52e6"/><stop offset="1" stop-color="#3f25a3"/></linearGradient>
+    <radialGradient id="glow" cx="0.28" cy="0.2" r="0.75"><stop offset="0" stop-color="#ffffff" stop-opacity="0.28"/><stop offset="0.6" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5ff5c0"/><stop offset="1" stop-color="#1fc28a"/></linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#ddd6ff"/></linearGradient>
+    <clipPath id="left"><rect x="0" y="0" width="31.2" height="64"/></clipPath>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <rect width="64" height="64" rx="14" fill="url(#glow)"/>
+  <!-- soft shadow under the frame and its label -->
+  <rect x="9.5" y="16.8" width="45" height="45" rx="7" fill="none" stroke="#1a1140" stroke-opacity="0.28" stroke-width="3.2"/>
+  <rect x="7.90" y="4.80" width="30" height="9.4" rx="3.7" fill="#1a1140" opacity="0.28"/>
+  <!-- inside of the frame, a little darker, so that the face stands out -->
+  <rect x="11.1" y="16.8" width="41.8" height="41.8" rx="5.4" fill="#1a1140" opacity="0.16"/>
+  <rect x="9.5" y="15.2" width="45" height="45" rx="7" fill="none" stroke="url(#green)" stroke-width="3.2"/>
+  <rect x="7.90" y="3.20" width="30" height="9.4" rx="3.7" fill="url(#green)"/><circle cx="12.60" cy="7.90" r="2.8" fill="#1a1140"/><path d="M11.20,7.90 L12.25,9.00 L14.05,6.90" fill="none" stroke="#3ee0a6" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"/><rect x="17.10" y="6.60" width="12" height="2.6" rx="1.3" fill="#1a1140"/><rect x="30.90" y="6.60" width="4" height="2.6" rx="1.3" fill="#1a1140" opacity="0.55"/>
+  <ellipse cx="32" cy="37.7" rx="15.39" ry="19.34" fill="url(#skin)" clip-path="url(#left)"/>
+  <g fill="#1a1140"><rect x="33.40" y="21.44" width="6.16" height="2.97" rx="1.48"/><rect x="33.40" y="26.38" width="10.55" height="2.97" rx="1.48"/><rect x="33.40" y="31.32" width="13.19" height="2.97" rx="1.48"/><rect x="33.40" y="36.27" width="14.50" height="2.97" rx="1.48"/><rect x="33.40" y="41.22" width="14.07" height="2.97" rx="1.48"/><rect x="33.40" y="46.16" width="11.87" height="2.97" rx="1.48"/><rect x="33.40" y="51.11" width="7.91" height="2.97" rx="1.48"/></g>
+  <circle cx="24.52" cy="34.19" r="2.19" fill="#1a1140"/>
+  <path d="M21.01,44.73 Q24.96,48.69 30.46,48.69" fill="none" stroke="#1a1140" stroke-width="2.19" stroke-linecap="round"/>
+</svg>
