@@ -1,0 +1,25 @@
+Edge AI - Face Recognition turns an Orbit OS device with a camera into a face recognition system that works by itself, with no cloud service behind it.
+
+Open the app and the camera appears in your browser, with a frame around every face it finds. Enroll a person by typing a name and recording the face for five seconds; from then on the name and the match score appear next to that face, live.
+
+Everything runs on the device. Camera frames are analysed locally and are not stored, no pictures are kept, and nothing is sent to the internet. Enrolled people are saved on the device as a name and a set of numbers that describe the face, and they are removed when you uninstall the app.
+
+What you can do:
+
+- See who is in front of the camera, in real time, with the name and the match score on each face
+- Enroll a person in a few seconds, and record the same person again in other light (daylight, lamp light) to make recognition more reliable; the last five recordings of each person are kept
+- Choose how strict recognition is, with a match threshold on the page
+- Switch identification off to only detect faces
+- See the enrolled people and remove them
+- Choose the camera when the device has more than one, and pause it when you do not need it
+- Use it from a computer or a phone
+
+Version 1.2 is a large update. Recognition uses a new model that tells people apart much better than before, face detection misses fewer faces, and the app does less work for each frame. The page is new, with a Live section and an Enroll section. The app is now reached only through the device portal, behind the device login. People enrolled with an earlier version have to be recorded again.
+
+Faces are personal data. Enroll only people who agreed to it, and follow the rules that apply where you use the app.
+
+Requirements
+- Raspberry Pi 3, 4 or 5, or Arduino UNO Q, with Orbit OS
+- A USB camera (webcam)
+
+After installation, open the device portal at http://<device_ip> and select the Edge AI - Face Recognition icon.
